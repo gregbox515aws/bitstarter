@@ -8,6 +8,7 @@ var buffer = new Buffer(100);
 buffer = fs.readFileSync('index.html')
 
 app.get('/', function(request, response) {
+  response.setHeader('Content-Type', 'text/html');
   response.send(buffer);
 });
 
